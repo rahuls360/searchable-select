@@ -19,8 +19,7 @@ class Select extends React.Component {
       }
 
       let filteredOptions = this.props.options.filter((option) => {
-          console.log(option);
-          return option.indexOf(this.state.search) !== -1;
+          return option.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
       });
       const optionsJSX = filteredOptions.map((option, index) => {
             return <option value={option} key={index}>{option}</option>;
